@@ -1,14 +1,14 @@
 const user = [
-    { login: "thiago" || "Thiago", password: "123456" },
-    { login: "marcelo" || "Marcelo", password: "123456" },
-    { login: "vivyane" || "Vivyane", password: "123456" },
-    { login: "pollyanna" || "Pollyanna", password: "123456" },
-    { login: "liliane" || "Liliane", password: "123456" },
-    { login: "erivalda" || "Erivalda", password: "123456" },
-    { login: "Joelclecio" || "joelclecio", password: "123456" },
-    { login: "bruno" || "Bruno", password: "123456" },
-    { login: "admin" || "Admin", password: "123456" },
-
+    { login: "thiago", password: "123456"},
+    { login: "marcelo", password: "123456"},
+    { login: "vivyane", password: "123456"},
+    { login: "pollyanna", password: "123456"},
+    { login: "liliane", password: "123456" },
+    { login: "erivalda", password: "123456"},
+    { login: "Joelclecio", password: "123456"},
+    { login: "bruno", password: "123456"},
+    { login: "diego", password: "123456"},
+    { login: "admin", password: "123456"},
 ]
 
 function logar() {
@@ -32,6 +32,3 @@ function logar() {
     }
 
 }
-
-
-
