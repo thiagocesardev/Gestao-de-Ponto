@@ -8,22 +8,30 @@ const user = [
     { login: "Joelclecio" || "joelclecio", password: "123456" },
     { login: "bruno" || "Bruno", password: "123456" },
     { login: "admin" || "Admin", password: "123456" },
-    
+
 ]
 
 function logar() {
     const login = document.getElementById('login').value
     const password = document.getElementById('password').value
-    const passwordErro = document.querySelector (".passwordErro")
+    const passwordErro = document.querySelector(".passwordErro")
+    let validaLogin = false
+
     for (let i in user) {
         if (login == user[i].login && password == user[i].password) {
-            location.href = "home.html"
+            validaLogin = true
+            break
+        } else {
+            validaLogin = false
         }
-         else {
-            passwordErro.innerHTML = ("Usuário ou senha incorreto")
-        }
-
     }
+    if (validaLogin == true) {
+        location.href = "home.html"
+    } else {
+        passwordErro.innerHTML = ("Usuário ou senha incorreto")
+    }
+
 }
+
 
 
