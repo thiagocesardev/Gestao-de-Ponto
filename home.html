@@ -4,39 +4,96 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+    <title>Sistema de Ponto</title>
 </head>
 
 <body>
+<section>
+    <h3>Registro de Ponto</h3>
+</section>
 
-    <h3>Bem vindo!</h3>
 
-    <header>
-        <img src=https://media.tenor.com/P3Z0IThiRlQAAAAC/hoje-tem.gif alt=hoje-tem.gif>
-    </header>
+    <section>
+
+        <button onclick="pointRegister('thiago', 'open')">Entrada</button>
+        <button onclick="pointRegister('thiago', 'exitLunch')">Inicio Intervalo</button>
+        <button onclick="pointRegister ('thiago', 'affernoonReturn')">Fim intervalo</button>
+        <button onclick="pointRegister('thiago', 'exit')">Saída</button>
+    </section>
+
+    <script src="./script.js"></script>
 
 </body>
+
 <style>
-    body {
-        font-family: Arial, sans-serif;
-        text-align: center;
-        margin: 0;
-    }
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+
+}
+
+section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    margin: 80px;
+   
+}
+
+button {
+    background-color: #0DC0C0;
+    color: white;
+    padding: 40px 60px;
+    font-size: 30px;
+    cursor: pointer;
+    border: 1px solid #cccccc;
+}    
+    
+    
+h3{
+    margin-top: 20px;
+    font-size: 50px;
+    text-align: center;
+}
 
 
-    h3 {
-        color: #2e343c;
-        font-size: 53px;
-        margin-top: 10px;
-        max-width: 100%;
-        font-family: "Helvetica Neue",Helvetica, Arial, sans-serif;
+button:hover {
+    opacity: 0.7;
+}
+
+@media (max-width: 500px) {
+
+    *{
+        background-color: #0DC0C0;
     }
 
-    img {
-        max-width: 100%;
-        width: 800px;
-        border-radius: 10px;
-    }
+    h3{
+    margin-top: 20px;
+    font-size: 30px;
+    text-align: center;
+}
+    section {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+   margin: 20px;
+}
+button {
+    
+    color: white;
+    padding: 20px 40px;
+    font-size: 30px;
+    cursor: pointer;
+    border: none;
+}  
+}
+
 </style>
 
 </html>
