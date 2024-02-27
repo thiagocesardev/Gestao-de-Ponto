@@ -1,20 +1,22 @@
 const user = [
-    { login: "thiago", password: "123456", regime: "8h"},
-    { login: "marcelo", password: "123456", regime: "6h"},
-    { login: "vivyane", password: "123456", regime: "8h"},
-    { login: "pollyanna", password: "123456", regime: "8h"},
-    { login: "liliane", password: "123456", regime: "8h" },
-    { login: "erivalda", password: "123456", regime: "8h"},
-    { login: "joelclecio", password: "123456", regime: "6h"},
-    { login: "bruno", password: "123456", regime: "8h"},
-    { login: "diego", password: "123456", regime: "8h"},
-    { login: "admin", password: "123456", regime: "8h"},
-    { login: "assis", password: "123456", regime: "8h"},
+    { login: "thiago", password: "123456", regime: "8h", entries: [] },
+    { login: "marcelo", password: "123456", regime: "6h", entries: [] },
+    { login: "vivyane", password: "123456", regime: "8h", entries: [] },
+    { login: "pollyanna", password: "123456", regime: "8h" },
+    { login: "liliane", password: "123456", regime: "8h", entries: [] },
+    { login: "erivalda", password: "123456", regime: "8h", entries: [] },
+    { login: "joelclecio", password: "123456", regime: "6h", entries: [] },
+    { login: "bruno", password: "123456", regime: "8h", entries: [] },
+    { login: "diego", password: "123456", regime: "8h", entries: [] },
+    { login: "admin", password: "123456", regime: "8h", entries: [] },
+    { login: "assis", password: "123456", regime: "8h", entries: [] },
+    { login: "você", password: "123456", regime: "8h", entries: [] },
+    { login: "cleverlan", password: "123456", regime: "8h", entries: [] },
 ]
 
 
 
-  
+
 function logar() {
     const login = document.getElementById('login').value
     const password = document.getElementById('password').value
@@ -37,60 +39,35 @@ function logar() {
 
 }
 
-const datePoint = [
-    { user: "thiago", entries: [] },
-    { user: "marcelo", entries: [] },
-    { user: "vivyane", entries: [] },
-    { user: "pollyanna", entries: [] },
-    { user: "liliane", entries: [] },
-    { user: "erivalda", entries: [] },
-    { user: "joeclecio", entries: [] },
-    { user: "bruno", entries: [] },
-    { user: "diego", entries: [] },
-    { user: "admin", entries: [] },
+function pointRegister(login, recordType) {
+    const userToRegister = user.find(user => user.login === login);
+    
 
-  ];
-
-
-  function pointRegister (login, recordType){
-    const userLogar = datePoint.find (user=>user.user === login);
-
-
-    if (userLogar){
+    if (userToRegister) {
         const now = new Date();
-       
+        const timestamp = now.toLocaleString();
+
         switch (recordType) {
             case "open":
-                userLogar.entries.push({ tipo: "Entrada", timestamp: now });
-                console.log(`Entrada registrada para ${login} às ${now.toLocaleTimeString()}`);
+                userToRegister.entries.push({ tipo: "Entrada", timestamp });
+                alert(`Entrada registrada para ${login} às ${timestamp}`);
                 break;
             case "exitLunch":
-                userLogar.entries.push({ tipo: "Saída para Almoço", timestamp: now });
-                console.log(`Saída para almoço registrada para ${login} às ${now.toLocaleTimeString()}`);
+                userToRegister.entries.push({ tipo: "Início Intervalo", timestamp });
+                alert(`Início Intervalo registrado para ${login} às ${timestamp}`);
                 break;
-                    case "affernoonReturn":
-                        userLogar.entries.push ({tipo: "Retorno à Tarde", timestamp: now});
-                        console.log (`Entrada registrada para ${login} as ${now.toLocaleTimeString}`)
-                                 
-                        break;
-                        case "exit":
-                            userLogar.entries.push ({tipo: "Saída para Casa", timestamp: now});
-                            console.log (`Entrada registrada para ${login} as ${now.toLocaleTimeString}`)
-                                     
-                            break;
-        
-                            default:
-                              console.log("Tipo de registro inválido");
-                          }
-                        } else {
-                          console.log("Usuário não encontrado");
+            case "afternoonReturn":
+                userToRegister.entries.push({ tipo: "Fim Intervalo", timestamp });
+                alert(`Fim Intervalo registrado para ${login} às ${timestamp}`);
+                break;
+            case "exit":
+                userToRegister.entries.push({ tipo: "Saída", timestamp });
+                alert(`Saída registrada para ${login} às ${timestamp}`);
+                break;
+            default:
+                alert("Tipo de registro inválido");
         }
-        
+    } else {
+        console.log("Usuário não encontrado");
     }
-
-    pointRegister("thiago", "open");
-    pointRegister("thiago", "exitLunch");
-    pointRegister("thiago", "affernoonReturn");
-    pointRegister("thiago", "exit");
-
- 
+}
