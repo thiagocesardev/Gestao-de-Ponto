@@ -18,26 +18,19 @@ const user = [
 
 
 function logar() {
-    const login = document.getElementById('login').value
-    const password = document.getElementById('password').value
-    const passwordErro = document.querySelector(".passwordErro")
-    let validaLogin = false
+    const login = document.getElementById('login').value;
+    const password = document.getElementById('password').value;
+    const passwordErro = document.querySelector(".passwordErro");
 
-    for (let i in user) {
-        if (login == user[i].login && password == user[i].password) {
-            validaLogin = true
-            break
-        } else {
-            validaLogin = false
-        }
-    }
-    if (validaLogin == true) {
-        location.href = "home.html"
+    const foundUser = user.find(u => u.login === login && u.password === password);
+
+    if (foundUser) {
+        location.href = "home.html";
     } else {
-        passwordErro.innerHTML = ("Usuário ou senha incorreto")
+        passwordErro.innerHTML = "Usuário ou senha incorretos";
     }
-
 }
+
 
 function pointRegister(login, recordType) {
     const userToRegister = user.find(user => user.login === login);
