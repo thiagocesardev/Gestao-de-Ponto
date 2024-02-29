@@ -9,4 +9,7 @@ Este é um sistema de gestão de pontos de jornada de trabalho, desenvolvido em 
 
 - **Registro de Ponto:**
   - Os usuários podem registrar entrada, início e fim do intervalo, e saída.
+ 
+
+Thiago César
 
