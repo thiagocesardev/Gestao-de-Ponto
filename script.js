@@ -16,13 +16,12 @@ const user = [
 
 
 
-
 function logar() {
     const login = document.getElementById('login').value;
     const password = document.getElementById('password').value;
     const passwordErro = document.querySelector(".passwordErro");
 
-    const foundUser = user.find(u => u.login === login && u.password === password);
+    const foundUser = user.find (u=> u.login === login && u.password === password);
 
     if (foundUser) {
         location.href = "home.html";
