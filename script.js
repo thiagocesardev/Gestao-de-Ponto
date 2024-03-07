@@ -11,8 +11,13 @@ const user = [
     { login: "admin", password: "123456", regime: "8h", entries: [] },
     { login: "assis", password: "123456", regime: "8h", entries: [] },
     { login: "você", password: "123456", regime: "8h", entries: [] },
-    { login: "cleverlan", password: "123456", regime: "8h", entries: [] },
-]
+    { login: "evania", password: "123456", regime: "8h", entries: [] },
+    { login: "igor", password: "123456", regime: "8h", entries: [] },
+    { login: "jorge", password: "123456", regime: "8h", entries: [] },
+    { login: "vera", password: "123456", regime: "8h", entries: [] },
+    { login: "junior", password: "123456", regime: "8h", entries: [] },
+    { login: "antonio", password: "123456", regime: "8h", entries: [] },
+    ]
 
 
 
